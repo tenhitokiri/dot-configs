@@ -1,0 +1,5 @@
+https://github.com/Elv13/collision
+
+git clone https://github.com/Elv13/collision
+
+require("collision")()
