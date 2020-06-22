@@ -333,10 +333,25 @@ globalkeys = gears.table.join(
 --    awful.key({ modkey },            "r",     function () 
 --        awful.screen.focused().mypromptbox:run() end,
 --              {description = "run prompt", group = "launcher"}),
--- Run Dmenu
+-- Run Rofi
     awful.key({ modkey },            "space",     function () 
-    awful.util.spawn('dmenu_run') end,          
-                {description = "run dmenu", group = "launcher"}),
+    awful.util.spawn('rofi -show run') end,          
+                {description = "rofi run", group = "launcher"}),
+
+                -- Run Rofi
+    awful.key({ modkey },            "h",     function () 
+    awful.util.spawn('rofi -show ssh') end,          
+                {description = "rofi ssh", group = "launcher"}),
+                
+-- Run Rofi
+    awful.key({ modkey },            "tab",     function () 
+    awful.util.spawn('rofi -show window') end,          
+                {description = "rofi window", group = "launcher"}),
+
+-- Run Dmenu
+--    awful.key({ modkey },            "space",     function () 
+--    awful.util.spawn('dmenu_run') end,          
+--                {description = "run dmenu", group = "launcher"}),
 
 -- Run Firefox
     awful.key({ modkey },            "b",     function () 
