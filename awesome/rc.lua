@@ -619,3 +619,5 @@ beautiful.useless_gap = 5
 -- Autostart apps
 awful.spawn.with_shell('nitrogen --restore')
 awful.spawn.with_shell('compton')
+awful.spawn.with_shell('killall polybar')
+awful.spawn.with_shell('polybar -r example')
