@@ -88,10 +88,9 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 # some more ls aliases
-alias ll='ls -lah --color=auto'
+alias ll='ls -lh'
 alias la='ls -A'
 alias l='ls -CF'
-alias act='sudo apt update && sudo apt upgrade'
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
