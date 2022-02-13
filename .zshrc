@@ -44,6 +44,7 @@ source $ZSH/oh-my-zsh.sh
 alias act="sudo apt update && sudo apt upgrade && sudo apt autoremove"
 alias dcu="sudo docker-compose up -d"
 alias gc="git clone"
+alias gs="git status"
 alias dps="sudo docker ps"
 alias yul="yarn upgrade --latest"
 #Arreglar resoluciòn Con la R9
