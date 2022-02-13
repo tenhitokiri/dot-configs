@@ -51,6 +51,7 @@ alias xran="xrandr --output HDMI-0 --primary --mode 1920x1080 --rate 59.94 --out
 alias x2="xrandr --output HDMI-0 --primary --mode 1920x1080 --rate 59.94 --scale 0.8x0.8 --output DVI-1  --mode 1920x1080 --rate 59.95 --left-of HDMI-0"
 alias ls="lsd"
 alias cat="bat"
+alias vim="nvim"
 
 #source ~/powerlevel10k/powerlevel10k.zsh-theme
 source ~/.oh-my-zsh/custom/themes/powerlevel10k/powerlevel10k.zsh-theme
