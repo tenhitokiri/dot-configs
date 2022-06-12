@@ -9,6 +9,20 @@ fi
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
+export ZSH="$HOME/.oh-my-zsh"
+
+# Set name of the theme to load --- if set to "random", it will
+# load a random theme each time oh-my-zsh is loaded, in which case,
+# to know which specific one was loaded, run: echo $RANDOM_THEME
+# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
+#ZSH_THEME="robbyrussell"
+ZSH_THEME="powerlevel10k/powerlevel10k"
+
+#plugins=(git)
+
+source $ZSH/oh-my-zsh.sh
+
+# Path to your oh-my-zsh installation.
 autoload -U colors && colors
 export ZSH="/home/tenhitokiri/.oh-my-zsh"
 
@@ -27,9 +41,6 @@ bindkey '^e' edit-command-line
 bindkey -v
 export KEYTIMEOUT=1
 
-#ZSH_THEME="smt"
-ZSH_THEME= "powerlevel10k/powerlevel10k"
-
 export UPDATE_ZSH_DAYS=13
 
 ENABLE_CORRECTION="true"
@@ -39,27 +50,22 @@ plugins=(git
         zsh-syntax-highlighting
         )
 
-source $ZSH/oh-my-zsh.sh
 
 alias act="sudo apt update && sudo apt upgrade && sudo apt autoremove"
 alias dcu="sudo docker-compose up -d"
 alias gc="git clone"
-alias gs="git status"
 alias dps="sudo docker ps"
 alias yul="yarn upgrade --latest"
-#Arreglar resoluciòn Con la R9
-alias xran="xrandr --output HDMI-0 --primary --mode 1920x1080 --rate 59.94 --output DVI-1  --mode 1920x1080 --rate 59.95 --right-of HDMI-0"
-alias x2="xrandr --output HDMI-0 --primary --mode 1920x1080 --rate 59.94 --scale 0.8x0.8 --output DVI-1  --mode 1920x1080 --rate 59.95 --left-of HDMI-0"
 alias ls="lsd"
 alias cat="bat"
 alias vim="nvim"
+#Arreglar resoluciòn on la Vega
+#alias xran="xrandr --output DVI-D-1 --mode 1920x1080 --rate 60.00 --output HDMI-1 --primary --mode 1680x1050 --rate 59.95 --right-of DVI-D-1" 
+# Con la R9
+alias xran="xrandr --output HDMI-0 --primary --mode 1920x1080 --rate 59.94 --output DVI-1  --mode 1920x1080 --rate 59.95 --right-of HDMI-0"
 
-#source ~/powerlevel10k/powerlevel10k.zsh-theme
-source ~/.oh-my-zsh/custom/themes/powerlevel10k/powerlevel10k.zsh-theme
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 neofetch
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

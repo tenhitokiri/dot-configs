@@ -124,4 +124,4 @@ xterm*|rxvt*)
 *)
     ;;
 esac
-
+source .zshrc
