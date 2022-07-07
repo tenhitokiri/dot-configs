@@ -21,6 +21,8 @@ autoload -U colors && colors
 export DEV="$HOME/dev"
 export GOPATH="$HOME/dev/go"
 export GOBIN="$GOPATH/bin"
+export GO111MODULE=on
+#export GOROOT="/usr/local/go"
 
 # Basic auto/tab Completion
 autoload -U compinit
@@ -36,7 +38,6 @@ bindkey '^e' edit-command-line
 # vi mode
 bindkey -v
 export KEYTIMEOUT=1
-
 export UPDATE_ZSH_DAYS=13
 
 ENABLE_CORRECTION="true"
@@ -49,6 +50,8 @@ plugins=(git
 alias act="sudo apt update && sudo apt upgrade && sudo apt autoremove"
 alias dcu="sudo docker-compose up -d"
 alias gc="git clone"
+alias gs="git status"
+alias gac="git add . && git commit -m"
 alias dps="sudo docker ps"
 alias yul="yarn upgrade --latest"
 alias ls="lsd"
@@ -59,6 +62,7 @@ alias vim="nvim"
 # Con la R9
 alias xran="xrandr --output HDMI-0 --primary --mode 1920x1080 --rate 59.94 --output DVI-1  --mode 1920x1080 --rate 59.95 --right-of HDMI-0"
 
+export PATH=$PATH:$GOBIN:$GOROOT/bin
 source $ZSH/oh-my-zsh.sh
 #neofetch
 
