@@ -22,6 +22,7 @@ export DEV="$HOME/dev"
 export GOPATH="$HOME/dev/go"
 export GOBIN="$GOPATH/bin"
 export GO111MODULE=on
+export AVANTO="$DEV/goAvanto"
 #export GOROOT="/usr/local/go"
 
 # Basic auto/tab Completion
@@ -47,7 +48,20 @@ plugins=(git
         zsh-syntax-highlighting
         )
 
-alias act="sudo apt update && sudo apt upgrade && sudo apt autoremove"
+#allow global npm install
+export PATH=~/.npm-global/bin:$PATH
+
+#fix android studio on bspwm
+export _JAVA_AWT_WM_NONREPARENTING=1
+export ANDROID_HOME=/home/tenhitokiri/Android/Sdk
+export PATH=$ANDROID_HOME/platform-tools:$PATH
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/tools/bin
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+
+#alias act="sudo apt update && sudo apt upgrade && sudo apt autoremove"
+alias act="sudo nala update && sudo nala upgrade && sudo nala autoremove"
 alias dcu="sudo docker-compose up -d"
 alias gc="git clone"
 alias gs="git status"
@@ -57,14 +71,29 @@ alias yul="yarn upgrade --latest"
 alias ls="lsd"
 alias cat="bat"
 alias vim="nvim"
+alias stfu="eval `ssh-agent`"
+alias stfu2="ssh-add"
+alias myip="curl https://ipecho.net/plain ; echo" 
+alias gam="git add . && git commit --amend --no-edit"
 #Arreglar resoluciòn on la Vega
 #alias xran="xrandr --output DVI-D-1 --mode 1920x1080 --rate 60.00 --output HDMI-1 --primary --mode 1680x1050 --rate 59.95 --right-of DVI-D-1" 
 # Con la R9
-alias xran="xrandr --output HDMI-0 --primary --mode 1920x1080 --rate 59.94 --output DVI-1  --mode 1920x1080 --rate 59.95 --right-of HDMI-0"
+#alias xran="xrandr --output HDMI-0 --primary --mode 1440x900 --rate 59.9 --output DVI-1  --mode 1920x1080 --rate 59.95 --right-of HDMI-0"
+alias xran="xrandr  --output DVI-1 --mode 1600x1200 --rate 59.95 --primary --output HDMI-0 --mode 1360x768 --rate 59.9 --right-of DVI-1"
 
 export PATH=$PATH:$GOBIN:$GOROOT/bin
 source $ZSH/oh-my-zsh.sh
 #neofetch
 
+#android studio
+export PATH=~/Android/sdk/platformtools:~/Android/sdk/tools:/opt/android-studio/bin:$PATH
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+#starship prompt
+eval "$(starship init zsh)"
