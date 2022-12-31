@@ -23,6 +23,10 @@ export GOPATH="$HOME/dev/go"
 export GOBIN="$GOPATH/bin"
 export GO111MODULE=on
 export AVANTO="$DEV/goAvanto"
+export REPFABRIC="$DEV/RepFabric/"
+export BACKOFFICE="$AVANTO/backoffice_graphql"
+export SAAS="$AVANTO/backend-saas-records"
+export MONOREPO="$AVANTO/backend-mono-repo"
 #export GOROOT="/usr/local/go"
 
 # Basic auto/tab Completion
@@ -75,11 +79,12 @@ alias stfu="eval `ssh-agent`"
 alias stfu2="ssh-add"
 alias myip="curl https://ipecho.net/plain ; echo" 
 alias gam="git add . && git commit --amend --no-edit"
+alias rmnodem="find . -name 'node_modules' -type d -prune -exec rm -rf '{}' + "
 #Arreglar resoluciòn on la Vega
 #alias xran="xrandr --output DVI-D-1 --mode 1920x1080 --rate 60.00 --output HDMI-1 --primary --mode 1680x1050 --rate 59.95 --right-of DVI-D-1" 
 # Con la R9
 #alias xran="xrandr --output HDMI-0 --primary --mode 1440x900 --rate 59.9 --output DVI-1  --mode 1920x1080 --rate 59.95 --right-of HDMI-0"
-alias xran="xrandr  --output DVI-1 --mode 1600x1200 --rate 59.95 --primary --output HDMI-0 --mode 1360x768 --rate 59.9 --right-of DVI-1"
+alias xran="xrandr  --output DVI-1 --mode 1600x1200 --rate 59.95 --primary --output HDMI-0 --mode 1280x960 --rate 59.9 --right-of DVI-1"
 
 export PATH=$PATH:$GOBIN:$GOROOT/bin
 source $ZSH/oh-my-zsh.sh
